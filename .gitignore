@@ -402,3 +402,4 @@ FodyWeavers.xsd
 /StudentManagement/StudentManagement.csproj
 /StudentManagement/.vs/StudentManagement/DesignTimeBuild/.dtbcache.v2
 /StudentManagement/.vs/StudentManagement/v17/.suo
+*.suo
