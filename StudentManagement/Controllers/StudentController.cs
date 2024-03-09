@@ -5,7 +5,6 @@ using StudentManagement.Models;
 
 namespace StudentManagement.Controllers
 {
-    [Authorize]
     public class StudentController : Controller
     {
         private readonly DataContext context;
@@ -20,7 +19,7 @@ namespace StudentManagement.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return View("/Views/NewStudent/Index.cshtml");
+            return View("/Views/New Student/Index.cshtml");
         }
 
         [HttpPost]
