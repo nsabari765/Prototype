@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/StudentManagement/Migrations/20240309070435_Update Student Model.cs
+/StudentManagement/Migrations/DataContextModelSnapshot.cs
+/StudentManagement/StudentManagement.csproj
