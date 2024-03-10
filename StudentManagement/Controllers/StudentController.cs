@@ -1,7 +1,8 @@
-﻿using DemoMvc.Data;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StudentManagement.Data;
 using StudentManagement.Models;
+using StudentManagement.Repository;
 
 namespace StudentManagement.Controllers
 {
@@ -9,17 +10,27 @@ namespace StudentManagement.Controllers
     {
         private readonly DataContext context;
         private readonly ILogger<HomeController> _logger;
+        private readonly IStudentRepository repository;
 
-        public StudentController(DataContext context, ILogger<HomeController> logger)
+        public StudentController(DataContext context, ILogger<HomeController> logger, IStudentRepository repository)
         {
             this.context = context;
             _logger = logger;
+            this.repository = repository;
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public async Task<IActionResult> View()
         {
-            return View("/Views/New Student/Index.cshtml");
+            var resopnse = await repository.GetAllStudents();
+            return View("/Views/New Student/View.cshtml", resopnse);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Add(int id)
+        {
+            var response = await repository.GetStduentById(id);
+            return View("/Views/New Student/Index.cshtml",response);
         }
 
         [HttpPost]
@@ -27,12 +38,18 @@ namespace StudentManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                await context.Student.AddAsync(student);
-                await context.SaveChangesAsync();
-                return RedirectToAction("Add");
+                await repository.SaveOrUpdate(student);
             }
 
-            return View(new Student());
+            return RedirectToAction("View");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(Student student)
+        {
+            var response = repository.Delete(student);
+
+            return RedirectToAction("View");
         }
     }
 }

@@ -399,14 +399,15 @@ FodyWeavers.xsd
 
 /StudentManagement/Migrations/20240309070435_Update Student Model.cs
 /StudentManagement/Migrations/DataContextModelSnapshot.cs
-/StudentManagement/StudentManagement.csproj
 /StudentManagement/.vs/StudentManagement/DesignTimeBuild/.dtbcache.v2
 /StudentManagement/.vs/StudentManagement/v17/.suo
 *.suo
 *.bin
 *.v2
-*.csproj.user
 /StudentManagement/.vs/ProjectEvaluation/studentmanagement.metadata.v7.bin
 /StudentManagement/.vs/ProjectEvaluation/studentmanagement.projects.v7.bin
 /StudentManagement/.vs/StudentManagement/v17/.futdcache.v2
 
+/StudentManagement/Migrations/20240309070435_Update Student Model.Designer.cs
+/StudentManagement/Migrations/20240310072224_Update LastyrSchool to Department.cs
+/StudentManagement/Migrations/20240310072224_Update LastyrSchool to Department.Designer.cs

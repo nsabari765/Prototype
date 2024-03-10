@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using StudentManagement.Models;
 
-namespace DemoMvc.Data
+namespace StudentManagement.Data
 {
     public class DataContext : DbContext
     {

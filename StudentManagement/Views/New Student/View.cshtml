@@ -1,0 +1,52 @@
+﻿@model List<Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h1 class="display-4">Students</h1>
+
+<table class="table" id="dataTableList">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Roll Number</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>DateOfBirth</th>
+            <th>Phone Number</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stu in Model)
+        {
+            <tr>
+                <td>@stu.Id</td>
+                <td>@stu.RollNumber</td>
+                <td>@stu.Name</td>
+                <td>@stu.Department</td>
+                <td>@stu.Email</td>
+                <td>@stu.DOB</td>
+                <td>@stu.Phone</td>
+                <th>
+                    <a href="@Url.Action("Add", "Student" , new { id=@stu.Id })"><i class="fa fa-edit m-3"></i></a>
+                    <a href="@Url.Action("Delete", "Student" , new { id=@stu.Id })"><i class="fa fa-trash m-3"></i></a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js('#dataTableList').DataTable({
+        });
+    });
+</script>
+
