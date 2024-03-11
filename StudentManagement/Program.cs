@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using StudentManagement.Data;
 using StudentManagement.Repository;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +10,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DataContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("StudentManagement")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<DataContext>();
 
 builder.Services.AddTransient<IStudentRepository,StudentRepository>();
 
@@ -30,6 +33,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",

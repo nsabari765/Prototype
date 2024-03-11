@@ -17,26 +17,15 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="dropdown px-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Student
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item dropdown-item">
-                            <a class="nav-link text-dark" asp-controller="Student" asp-action="Add">Add</a>
-                        </li>
-
-                        <li class="nav-item dropdown-item">
-                         <a class="nav-link text-dark" asp-controller="Student" asp-action="View">View</a>
-                        </li>
-
-                    </ul>
-                </div>
-
+                <a class="nav-link text-dark" asp-controller="Student" asp-action="Add">Add New Student</a>
+                <a class="nav-link text-dark" asp-controller="Student" asp-action="View">View Student Details</a>
+                
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 </div>
             </div>
+            <a href="https://www.instagram.com/sabarinathan_2k6/" target="_blank"><i class="fab fa-instagram fa-2x text-black m-3"></i></a>
+            <a href="https://github.com/nsabari765/Personal" target="_blank"><i class="fab fa-github fa-2x text-black m-3"></i></a>
+            <partial name="_LoginPartial" />
         </nav>
     </header>
     <div class="container">
@@ -50,6 +39,7 @@
             <h6 class="display-6 text-center">Welcome....</h6>
         </div>
     </footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.0/css/all.min.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
