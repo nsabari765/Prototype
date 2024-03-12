@@ -424,3 +424,4 @@ FodyWeavers.xsd
 /StudentManagement/obj/StudentManagement.csproj.nuget.dgspec.json
 /StudentManagement/obj/StudentManagement.csproj.nuget.g.props
 /StudentManagement/appsettings.json
+*appsettings.json
