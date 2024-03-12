@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudentManagement.Models;
+using StudentManagement.Repository;
 using System.Diagnostics;
 
 namespace StudentManagement.Controllers
@@ -13,7 +14,7 @@ namespace StudentManagement.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             return View();
         }

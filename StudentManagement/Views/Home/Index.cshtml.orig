@@ -1,13 +1,17 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<style>
+* {
+  font-family: 'Times New Roman', Times, serif; 
+}
+</style>
 <center>
 <<<<<<< Updated upstream
     <div class="container">
        <div class="row">
            <div class="col">
-    
-               <h1>Student Management System</h1>
+             <h1>Student Management System</h1>
                <br>
                <style> 
                    p{
@@ -16,8 +20,7 @@
                    text-align-last: justify;
                    }
                </style>
-             
-                <p> A student management system is an essential tool for educational institutions to efficiently manage student data and academic information. These systems typically include features such as student registration, attendance tracking, grade management, and communication tools between students, teachers, and parents. By centralizing student information, these systems streamline administrative tasks, improve communication, and provide valuable insights into student performance and progress. Additionally, they often offer security measures to protect sensitive data and customizable features to meet the specific needs of different educational settings. Overall, a well-designed student management system plays a crucial role in enhancing the overall effectiveness and organization of educational institutions.</p>
+                  <p> A student management system is an essential tool for educational institutions to efficiently manage student data and academic information. These systems typically include features such as student registration, attendance tracking, grade management, and communication tools between students, teachers, and parents. By centralizing student information, these systems streamline administrative tasks, improve communication, and provide valuable insights into student performance and progress. Additionally, they often offer security measures to protect sensitive data and customizable features to meet the specific needs of different educational settings. Overall, a well-designed student management system plays a crucial role in enhancing the overall effectiveness and organization of educational institutions.</p>
                 </p>
             </div>
          </div>
@@ -119,7 +122,7 @@
                         <div class="image-container">
                             <img src="~/Images/ps.jpeg" width="700" alt="" class="img-fluid">
                             <div class="text-overlay">
-                                <h2>About us</h2>
+                                <h1>About us</h1>
                                 <h6>Collage:Project</h6>
 
 =======
