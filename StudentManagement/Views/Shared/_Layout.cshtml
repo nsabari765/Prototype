@@ -41,6 +41,20 @@
             <a href="https://www.instagram.com/sabarinathan_2k6/" target="_blank"><i class="fab fa-instagram fa-2x text-black m-3"></i></a>
             <a href="https://github.com/nsabari765/Prototype" target="_blank"><i class="fab fa-github fa-2x text-black m-3"></i></a>
             <partial name="_LoginPartial" />
+            <div class="dropdown m-4">
+                <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="true">
+                    Roles
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="nav-item dropdown-item">
+                        <a class="nav-link text-black" asp-controller="Role" asp-action="Create"><i class="fa fa-plus-circle m-1"></i>Role</a>
+                    </li>
+                    <li class="nav-item dropdown-item">
+                        <a class="nav-link text-black" asp-controller="Role" asp-action="Index"><i class="fa fa-street-view m-1"></i>Role</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
     <div class="container">
