@@ -28,5 +28,7 @@ namespace StudentManagement.Data
         }
 
         public DbSet<Student> Student { get; set; }
+
+        public DbSet<RegistrationDetails> RegistrationDetails { get; set; }
     }
 }

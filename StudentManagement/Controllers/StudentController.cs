@@ -6,6 +6,7 @@ using StudentManagement.Repository;
 
 namespace StudentManagement.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private readonly DataContext context;
