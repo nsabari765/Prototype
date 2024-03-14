@@ -6,7 +6,6 @@ using StudentManagement.Repository;
 
 namespace StudentManagement.Controllers
 {
-    [Authorize]
     public class StudentController : Controller
     {
         private readonly DataContext context;
@@ -28,6 +27,7 @@ namespace StudentManagement.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,Principal")]
         public async Task<IActionResult> Add(int id)
         {
             var response = await repository.GetStduentById(id);
