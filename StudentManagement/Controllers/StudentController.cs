@@ -19,6 +19,7 @@ namespace StudentManagement.Controllers
             this.repository = repository;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> View()
         {
@@ -31,10 +32,11 @@ namespace StudentManagement.Controllers
         public async Task<IActionResult> Add(int id)
         {
             var response = await repository.GetStduentById(id);
-            return View("/Views/New Student/Index.cshtml",response);
+            return View("/Views/New Student/Index.cshtml", response);
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Principal")]
         public async Task<IActionResult> Add(Student student)
         {
             if (ModelState.IsValid)
@@ -45,6 +47,7 @@ namespace StudentManagement.Controllers
             return RedirectToAction("View");
         }
 
+        [Authorize(Roles = "Admin,Principal")]
         [HttpGet]
         public IActionResult Delete(Student student)
         {

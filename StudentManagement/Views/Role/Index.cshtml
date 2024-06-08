@@ -8,16 +8,14 @@
 <table class="table mt-5 table-bordered table-hover">
     <thead>
         <tr>
-            <th class="text-center text-center-sm">Id</th>
-            <th>Name</th>
+            <th class="text-center text-center-sm">Name</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var cus in Model)
         {
             <tr>
-                <td class="text-center text-center-sm">@cus.Id</td>
-                <td>@cus.Name</td>
+                <td class="text-center text-center-sm">@cus.Name</td>
             </tr>
         }
     </tbody>

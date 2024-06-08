@@ -19,8 +19,7 @@
                     <div class="col-sm-10 pt-5">
                         <p class="lead" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
                             <i>
-                                Add your child<br />
-                                with us..
+                                Join hands with us <br /> let's paint the world with our ambitions...
                             </i>
                         </p>
                     </div>
@@ -39,7 +38,7 @@
                         <div class="col-md-3 col-lg-6">
                             <label for="name" asp-for="RollNumber" class="form-label">Roll Number</label>
                             <div class="col-sm-10">
-                                <input type="text" asp-for="RollNumber" class="form-control" name="RollNumber" placeholder="Enter your full name">
+                                <input type="number" asp-for="RollNumber" maxlength="10" class="form-control" name="RollNumber" placeholder="Enter your Roll Number">
                             </div>
                         </div>
                     </div>
@@ -53,7 +52,7 @@
                         <div class="col-md-3 col-lg-6">
                             <label for="email" asp-for="Phone" class="form-label">Phone Number</label>
                             <div class="col-sm-10">
-                                <input type="text" asp-for="Phone" class="form-control" id="email" name="Phone" placeholder="Enter your PhoneNumber">
+                                <input type="text" asp-for="Phone" maxlength="12" class="form-control" name="Phone" placeholder="Enter your PhoneNumber">
                             </div>
                         </div>
                     </div>
@@ -86,7 +85,7 @@
                         <div class="col-md-3 col-lg-6">
                             <label for="email" asp-for="Department" class="form-label">Department</label>
                             <div class="col-sm-10">
-                                <input type="text" asp-for="Department" class="form-control" id="email" name="Department" placeholder="Enter your School">
+                                <input type="text" asp-for="Department" class="form-control" id="email" name="Department" placeholder="Enter your Department">
                             </div>
                         </div>
                     </div>
@@ -97,3 +96,5 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="~/js/Login/Login.js"></script>

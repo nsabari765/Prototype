@@ -1,7 +1,8 @@
-﻿@model List<Student>
+﻿@model IEnumerable<Student>
 
 @{
     ViewData["Title"] = "Students";
+    int count = 0;
 }
 
 <h1 class="display-4">Students</h1>
@@ -22,8 +23,9 @@
     <tbody>
         @foreach (var stu in Model)
         {
+             count++;
             <tr>
-                <td>@stu.Id</td>
+                <td>@count</td>
                 <td>@stu.RollNumber</td>
                 <td>@stu.Name</td>
                 <td>@stu.Department</td>
