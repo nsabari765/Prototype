@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudentManagement.Data;
@@ -17,6 +18,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
     .AddEntityFrameworkStores<DataContext>();
 
 builder.Services.AddTransient<IStudentRepository, StudentRepository>();
+
+builder.Services.Configure<FormOptions>(options => { options.MultipartBodyLengthLimit = 268435456; });
 
 var app = builder.Build();
 

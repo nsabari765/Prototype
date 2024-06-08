@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudentManagement.Data;
 using StudentManagement.Models;
-using System.Net;
 
 namespace StudentManagement.Repository
 {
@@ -15,6 +14,7 @@ namespace StudentManagement.Repository
 
         Student Delete(Student student);
     }
+
     public class StudentRepository : IStudentRepository
     {
         public readonly DataContext context;
@@ -28,10 +28,21 @@ namespace StudentManagement.Repository
         {
             var studentInDb = await context.Student.FindAsync(student.Id);
 
-            
-            if(studentInDb == null)
+            if (student.File != null)
             {
-                await context.Student.AddAsync(student);    
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(),
+                                @"wwwroot\uploading", student.File.FileName);
+
+                using var stream = new FileStream(filePath, FileMode.Create);
+
+                student.File.CopyTo(stream);
+
+                student.Stu_Image = student.File.FileName;
+            }
+
+            if (studentInDb == null)
+            {
+                await context.Student.AddAsync(student);
             }
             else
             {
@@ -43,8 +54,10 @@ namespace StudentManagement.Repository
                 studentInDb.Gender = student.Gender;
                 studentInDb.Address = student.Address;
                 studentInDb.Department = student.Department;
+                studentInDb.Stu_Image = student.File.FileName;
             }
-            await context.SaveChangesAsync();   
+
+            await context.SaveChangesAsync();
             return student;
         }
 
@@ -57,14 +70,15 @@ namespace StudentManagement.Repository
         public async Task<Student> GetStduentById(int id)
         {
             var students = await context.Student.FindAsync(id);
+
             return students;
         }
 
         public Student Delete(Student stduent)
         {
             var studentInDb = context.Student.Find(stduent.Id);
-            
-            if (studentInDb != null )
+
+            if (studentInDb != null)
             {
                 context.Student.Remove(studentInDb);
             }

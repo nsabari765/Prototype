@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\js\Registration\" />
+    <Folder Include="wwwroot\uploading\" />
   </ItemGroup>
 
 </Project>

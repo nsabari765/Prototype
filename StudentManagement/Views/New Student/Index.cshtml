@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <form id="registrationForm" method="post"  asp-controller="Student" asp-action="Add">
+            <form id="registrationForm" method="post" enctype="multipart/form-data" asp-controller="Student" asp-action="Add">
                 <div class="card-body ">
                     <div class="row mb-3">
                         <div class="col-md-3 col-lg-6">
@@ -86,6 +86,22 @@
                             <label for="email" asp-for="Department" class="form-label">Department</label>
                             <div class="col-sm-10">
                                 <input type="text" asp-for="Department" class="form-control" id="email" name="Department" placeholder="Enter your Department">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 col-lg-6">
+                            <label for="file" asp-for="File" class="form-label">Upload</label>
+                            <div class="col-sm-10">
+                                <input type="file" asp-for="File" class="form-control" name="file" placeholder="Upload Your File">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-lg-6">
+                            <div class="col-sm-10">
+                                @if(Model.Stu_Image != null)
+                                {
+                                    <img src="/uploading/@Model.Stu_Image" alt="StudentImage" class="img-fluid mx-auto d-block rounded" />
+                                }
                             </div>
                         </div>
                     </div>
